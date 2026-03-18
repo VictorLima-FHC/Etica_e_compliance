@@ -587,6 +587,14 @@ button {
   margin-bottom: 18px;
 }
 
+.accordion-text-diferent p strong {
+  color: #000;
+}
+
+.text-mobile {
+  display: none;
+}
+
 .accordion-text-diferent1 p {
   font-size: 14px;
   color: var(--c-text-mid);
