@@ -251,7 +251,7 @@ button {
   display: none;
   flex-direction: column;
   flex: 1;
-  min-height: 370px;
+  min-height: 270px;
 }
 
 .bloco__body.active .bloco__content {
@@ -265,8 +265,7 @@ button {
 .bloco__text {
   font-size: 14px;
   color: rgba(255, 255, 255, 0.88);
-  line-height: 1.65;
-  margin-bottom: 20px;
+  line-height: 1;
   flex: 1;
 }
 
@@ -479,7 +478,7 @@ button {
 .accordion-card {
   background: var(--c-white);
   border-radius: 30px;
-  padding: 40px;
+  padding: 20px 40px;
   margin-bottom: 35px;
 }
 
@@ -496,6 +495,7 @@ button {
   justify-content: space-between;
   gap: 24px;
   padding-block: 16px;
+  padding-bottom: 0;
   text-align: left;
   background: none;
   border: none;
@@ -529,6 +529,7 @@ button {
   max-height: 0;
   transition: max-height 0.4s ease;
   padding-right: 100px;
+  margin: 10px 0;
 }
 
 .accordion-body[hidden] {
@@ -542,7 +543,7 @@ button {
 
 /* Accordion content layouts */
 .accordion-content {
-  padding-bottom: 32px;
+  padding: 32px 0;
 }
 
 .accordion-content--text-left {
@@ -629,6 +630,7 @@ button {
   text-decoration: underline;
   text-underline-offset: 3px;
   transition: color 0.2s;
+  margin-bottom: 25px;
 }
 
 .accordion-link:hover {

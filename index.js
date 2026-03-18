@@ -38,9 +38,9 @@ document.addEventListener('DOMContentLoaded', () => {
     title.addEventListener('click', () => {
       const isActive = bloco.classList.contains('active');
 
-      blocos.forEach((b) => b.classList.remove('active'));
-
-      if (!isActive) {
+      if (isActive) {
+        bloco.classList.remove('active');
+      } else {
         bloco.classList.add('active');
       }
     });
