@@ -220,7 +220,7 @@ button {
 }
 
 .bloco__body {
-  margin-top: 5px;
+  margin-top: -1px;
   padding: 25px;
   cursor: pointer;
   flex: 1;
@@ -528,6 +528,7 @@ button {
   overflow: hidden;
   max-height: 0;
   transition: max-height 0.4s ease;
+  padding-right: 140px;
 }
 
 .accordion-body[hidden] {
