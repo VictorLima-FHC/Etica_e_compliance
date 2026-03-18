@@ -190,6 +190,14 @@
     font-size: 22px;
   }
 
+  .accordion-body {
+    padding: 0;
+  }
+
+  .accordion-image-diferent img {
+    height: 180px;
+  }
+
   .az-ethics__cards {
     grid-template-columns: 1fr;
   }
