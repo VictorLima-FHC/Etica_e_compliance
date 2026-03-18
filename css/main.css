@@ -1,0 +1,660 @@
+/* ================================================================
+   DESIGN TOKENS
+   ================================================================ */
+:root {
+  /* Colors */
+  --c-purple:       #78174f;
+  --c-purple-dark:  #7e2755;
+  --c-pink:         #bf286e;
+  --c-gold:         #e6ae3b;
+  --c-charcoal:     #3c4242;
+  --c-navy:         #003865;
+  --c-text:         #1f1f1e;
+  --c-text-mid:     #5f6368;
+  --c-bg-light:     #f9f9f9;
+  --c-bg-grey:      #ebebeb;
+  --c-bg-tint:      rgba(120, 23, 79, 0.05);
+  --c-white:        #ffffff;
+
+  /* Typography */
+  --font-heading:   'lexia', Georgia, serif;
+  --font-body:      'Inter', system-ui, sans-serif;
+
+  /* Layout */
+  --content-width:  1440px;
+  --h-pad:          60px;
+  --gap:            17px;
+}
+
+/* ================================================================
+   RESET & BASE
+   ================================================================ */
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: var(--font-body);
+  font-size: 16px;
+  color: var(--c-text);
+  background: var(--c-white);
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+}
+
+img {
+  display: block;
+  max-width: 100%;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+button {
+  font-family: inherit;
+  cursor: pointer;
+  border: none;
+  background: none;
+}
+
+/* ================================================================
+   CONTAINER
+   ================================================================ */
+.container {
+  max-width: var(--content-width);
+  margin-inline: auto;
+  padding-inline: var(--h-pad);
+}
+
+/* ================================================================
+   BUTTONS
+   ================================================================ */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 20px;
+  padding: 16px 28px;
+  font-family: var(--font-body);
+  font-size: 15px;
+  font-weight: 700;
+  border-radius: 4px;
+  transition: background 0.2s, color 0.2s, border-color 0.2s;
+  white-space: nowrap;
+  cursor: pointer;
+  text-align: center;
+}
+
+.btn--outline-dark {
+  border: 1px solid var(--c-text);
+  color: var(--c-text);
+  background: transparent;
+  text-decoration: underline;
+}
+
+.btn--outline-dark:hover {
+  background: var(--c-text);
+  color: var(--c-white);
+}
+
+.btn--outline-purple {
+  border: 1px solid var(--c-purple);
+  color: var(--c-purple);
+  background: transparent;
+  text-decoration: underline;
+}
+.btn--outline-purple:hover {
+  background: var(--c-purple);
+  color: var(--c-white);
+}
+
+.btn--filled-purple {
+  background: var(--c-purple);
+  color: var(--c-white);
+  border: 1px solid var(--c-purple);
+}
+.btn--filled-purple:hover {
+  background: var(--c-purple-dark);
+  border-color: var(--c-purple-dark);
+}
+
+/* ================================================================
+   1. HERO
+   ================================================================ */
+.hero {
+  position: relative;
+  height: 400px;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+}
+
+.hero__bg {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center 20%;
+}
+
+.hero__overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    to right,
+    #78174f,
+    rgba(120, 23, 79, 0) 74%
+  );
+}
+
+.hero__content {
+  position: relative;
+  z-index: 1;
+  width: 100%;
+  max-width: var(--content-width);
+  margin-inline: auto;
+  padding-inline: var(--h-pad);
+}
+
+.hero__title {
+  font-family: 'LexiaRegular', sans-serif;
+  font-size: 51px;
+  font-weight: 700;
+  color: var(--c-white);
+  line-height: 1.3;
+  max-width: 531px;
+}
+
+/* ================================================================
+   2. BLOCOS
+   ================================================================ */
+.blocos {
+  background: var(--c-white);
+  padding-block: 64px;
+}
+
+.blocos__intro {
+  margin-bottom: 44px;
+}
+
+.blocos__intro p {
+  font-size: 16px;
+  color: var(--c-text);
+  max-width: 1216px;
+  line-height: 1.4;
+}
+
+.blocos__grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: var(--gap);
+  align-items: start;
+}
+
+.bloco {
+  display: flex;
+  flex-direction: column;
+  align-self: start;
+}
+
+.bloco__icon-area {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 194px;
+  padding: 24px;
+}
+
+.bloco__icon {
+  display: block;
+  max-width: 144px;
+  max-height: 144px;
+}
+
+.bloco__body {
+  margin-top: 5px;
+  padding: 25px;
+  cursor: pointer;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+.bloco__title {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+    font-family: 'LexiaXBold', sans-serif;
+  font-size: 14px;
+  color: var(--c-white);
+  letter-spacing: 1.12px;
+  line-height: 18px;
+  min-height: 40px;
+}
+
+.bloco__arrow {
+  width: 25px;
+  height: 25px;
+  transition: transform 0.3s ease;
+}
+
+.bloco__content {
+  margin-top: 20px;
+  display: none;
+  flex-direction: column;
+  flex: 1;
+  min-height: 370px;
+}
+
+.bloco__body.active .bloco__content {
+  display: flex;
+}
+
+.bloco__body.active .bloco__arrow {
+  transform: rotate(180deg);
+}
+
+.bloco__text {
+  font-size: 14px;
+  color: rgba(255, 255, 255, 0.88);
+  line-height: 1.65;
+  margin-bottom: 20px;
+  flex: 1;
+}
+
+.bloco__link {
+  display: inline-flex;
+  align-items: center;
+  color: var(--c-white);
+  margin-top: auto;
+  line-height: 1.2;
+}
+
+.bloco__link--outlined {
+  text-decoration: none;
+  border: 1px solid rgba(255, 255, 255, 0.7);
+  padding: 10px 15px;
+  border-radius: 3px;
+}
+
+.bloco__link--outlined p {
+  font-size: 14px;
+  text-decoration: underline;
+}
+
+.bloco--purple .bloco__icon-area,
+.bloco--purple .bloco__body {
+  background: var(--c-purple);
+}
+
+.bloco--gold .bloco__icon-area,
+.bloco--gold .bloco__body {
+  background: var(--c-gold);
+}
+
+.bloco--charcoal .bloco__icon-area,
+.bloco--charcoal .bloco__body {
+  background: var(--c-charcoal);
+}
+
+.bloco--navy .bloco__icon-area,
+.bloco--navy .bloco__body {
+  background: var(--c-navy);
+}
+
+/* ================================================================
+   3. CÓDIGO DE ÉTICA
+   ================================================================ */
+.codigo-etica {
+  background: var(--c-bg-light);
+  padding-block: 64px;
+}
+
+.codigo-etica__inner {
+  display: grid;
+  grid-template-columns: 1fr 543px;
+  gap: 86px;
+  align-items: center;
+  margin-bottom: 64px;
+}
+
+.section-label {
+  font-family: 'LexiaXBold', sans-serif;
+  font-size: 29px;
+  color: var(--c-purple-dark);
+  line-height: 1.3;
+  margin-bottom: 30px;
+}
+
+.codigo-etica__heading {
+  display: none;
+}
+
+.codigo-etica__body {
+  font-size: 16px;
+  color: var(--c-text);
+  line-height: 1.3;
+  margin-bottom: 16px;
+}
+.codigo-etica__body:last-child {
+  margin-bottom: 0;
+}
+
+.codigo-etica__image-wrap {
+  flex-shrink: 0;
+}
+
+.codigo-etica__image {
+  width: 100%;
+  height: 346px;
+  object-fit: cover;
+  border-radius: 0;
+}
+
+.codigo-etica__quote {
+  background: var(--c-bg-grey);
+  padding: 46px 49px;
+  margin-bottom: 64px;
+}
+
+.codigo-etica__quote p {
+  font-family: var(--font-body);
+  font-size: 16px;
+  font-style: normal;
+  color: var(--c-text);
+  line-height: 1.3;
+}
+
+.codigo-etica__ctas {
+  display: flex;
+  gap: 64px;
+  flex-wrap: wrap;
+  width: 100%;
+  justify-content: center;
+  align-items: center;
+}
+
+/* ================================================================
+   4. AZ ETHICS
+   ================================================================ */
+.az-ethics {
+  background: var(--c-white);
+  padding-block: 64px;
+}
+
+.az-ethics__heading {
+    font-family: 'LexiaXBold', sans-serif;
+  font-size: 29px;
+  font-weight: 700;
+  color: var(--c-purple);
+  letter-spacing: 1.05px;
+  margin-bottom: 40px;
+}
+
+.az-ethics__intro {
+  font-size: 16px;
+  color: var(--c-text);
+  line-height: 1.3;
+  margin-bottom: 40px;
+}
+
+.az-ethics__cards {
+  display: grid;
+  grid-template-columns: repeat(3, 389px);
+  gap: 26px;
+}
+
+.az-card {
+  background: var(--c-bg-light);
+  padding: 30px;
+}
+
+.az-card__icon-wrap {
+  width: 60px;
+  height: 60px;
+  border-radius: 30px;
+  background: var(--c-purple);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  margin-bottom: 30px;
+}
+
+.az-card__icon-wrap svg,
+.az-card__icon-wrap img {
+  width: 36px;
+  height: 34px;
+  object-fit: cover;
+}
+
+.az-card__title {
+  font-family: var(--font-body);
+  font-size: 13px;
+  font-weight: 700;
+  color: var(--c-text);
+  margin-bottom: 8px;
+  line-height: 1.3;
+}
+
+.az-card__body {
+  font-size: 13px;
+  color: var(--c-text-mid);
+  line-height: 1.3;
+}
+
+.az-card__body strong {
+  color: #1F1F1E;
+}
+
+/* ================================================================
+   5. SAIBA COMO — ACCORDION SECTION
+   ================================================================ */
+.saiba-como {
+  background: var(--c-bg-tint);
+  padding-top: 64px;
+  padding-bottom: 64px;
+}
+
+.saiba-como__heading {
+  font-family: 'LexiaXBold', sans-serif;
+  font-size: 25px;
+  font-weight: 700;
+  color: var(--c-purple-dark);
+  line-height: 1.3;
+  margin-bottom: 35px;
+  text-align: center;
+  width: 100%;
+}
+
+/* White accordion card */
+.accordion-card {
+  background: var(--c-white);
+  border-radius: 30px;
+  padding: 40px;
+  margin-bottom: 35px;
+}
+
+/* Accordion item */
+.accordion-item {
+  overflow: hidden;
+}
+
+/* Header row (clickable) */
+.accordion-header {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 24px;
+  padding-block: 16px;
+  text-align: left;
+  background: none;
+  border: none;
+  cursor: pointer;
+  color: var(--c-text);
+}
+
+.accordion-title {
+  font-family: var(--font-body);
+  font-size: 20px;
+  font-weight: 600;
+  color: var(--c-text);
+  transition: color 0.2s;
+}
+
+.accordion-arrow {
+  width: 24px;
+  height: 24px;
+  flex-shrink: 0;
+  color: #1f1f1e7c;
+  transition: transform 0.3s ease;
+}
+
+.accordion-item.is-open .accordion-arrow {
+  transform: rotate(180deg);
+}
+
+/* Body (collapsed by default via JS / hidden attr) */
+.accordion-body {
+  overflow: hidden;
+  max-height: 0;
+  transition: max-height 0.4s ease;
+}
+
+.accordion-body[hidden] {
+  display: block !important; /* override hidden so transition works */
+  max-height: 0;
+}
+
+.accordion-item.is-open .accordion-body {
+  max-height: 1000px;
+}
+
+/* Accordion content layouts */
+.accordion-content {
+  padding-bottom: 32px;
+}
+
+.accordion-content--text-left {
+  display: grid;
+  grid-template-columns: 1fr 468px;
+  gap: 50px;
+  align-items: start;
+}
+
+.accordion-content--image-left {
+  display: grid;
+  grid-template-columns: 468px 1fr;
+  gap: 50px;
+  align-items: start;
+}
+
+.accordion-content--full {
+  display: flex;
+  flex-direction: column;
+  gap: 28px;
+}
+
+.accordion-text {
+  max-width: 400px;
+}
+
+.accordion-text p {
+  font-size: 14px;
+  color: var(--c-text-mid);
+  line-height: 1.3;
+  margin-bottom: 18px;
+}
+
+.accordion-text-diferent p {
+  font-size: 14px;
+  color: var(--c-text-mid);
+  line-height: 1.3;
+  margin-bottom: 18px;
+}
+
+.accordion-text p:last-of-type {
+  margin-bottom: 0;
+}
+
+.accordion-image img {
+  width: 100%;
+  height: 347px;
+  object-fit: cover;
+}
+
+.accordion-image-diferent img  {
+    width: 100%;
+  height: 247px;
+  object-fit: cover;
+}
+
+.accordion-image--full img {
+  width: 100%;
+  height: 221px;
+  object-fit: cover;
+  object-position: bottom;
+  display: block;
+}
+
+.accordion-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 1px;
+  margin-top: 22px;
+  font-size: 14px;
+  font-weight: 700;
+  color: var(--c-pink);
+  text-decoration: underline;
+  text-underline-offset: 3px;
+  transition: color 0.2s;
+}
+
+.accordion-link:hover {
+  color: var(--c-purple);
+}
+.accordion-link svg,
+.accordion-link img {
+  width: 30px;
+  flex-shrink: 0;
+  padding-left: 15px;
+}
+
+/* Divider between items */
+.accordion-divider {
+  border: none;
+  border-top: 1px solid var(--c-bg-grey);
+  margin: 0;
+}
+
+/* Final CTA */
+.saiba-como__cta-final {
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 35px;
+}
+
+.saiba-como__cta-text {
+  font-size: 18px;
+  font-weight: 700;
+  color: var(--c-purple);
+  max-width: 696px;
+  line-height: 1.3;
+}
+
+.saiba-como__cta-final .btn--filled-purple {
+  height: 70px;
+  width: 332px;
+  justify-content: center;
+}

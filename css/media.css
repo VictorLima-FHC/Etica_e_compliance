@@ -1,0 +1,300 @@
+/* ================================================================
+   RESPONSIVE — ≤1280px
+   ================================================================ */
+@media (max-width: 1280px) {
+  :root {
+    --h-pad: 48px;
+    --content-width: 100%;
+  }
+
+  /* Hero */
+  .hero__title {
+    font-size: 42px;
+  }
+
+  /* Blocos: allow horizontal scroll for card section */
+  .blocos__grid {
+    overflow-x: auto;
+    padding-bottom: 8px;
+  }
+
+  /* Código de Ética */
+  .codigo-etica__inner {
+    grid-template-columns: 1fr 380px;
+    gap: 48px;
+  }
+
+  /* AZ Ethics cards */
+  .az-ethics__cards {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 16px;
+  }
+
+  .az-card {
+    padding: 20px;
+  }
+
+  .az-card__icon-wrap {
+    margin-bottom: 20px;
+  }
+
+  /* Accordion content */
+  .accordion-content--text-left,
+  .accordion-content--image-left {
+    grid-template-columns: 1fr 340px;
+    gap: 32px;
+  }
+
+  .accordion-content--image-left {
+    grid-template-columns: 340px 1fr;
+  }
+}
+
+/* ================================================================
+   RESPONSIVE — ≤1024px  (tablet)
+   ================================================================ */
+@media (max-width: 1024px) {
+  :root {
+    --h-pad: 32px;
+  }
+
+  /* Hero */
+  .hero {
+    height: 380px;
+  }
+
+  .hero__title {
+    font-size: 36px;
+  }
+
+  /* Blocos: 2-column grid */
+  .blocos__grid {
+    grid-template-columns: repeat(2, 1fr);
+    overflow-x: unset;
+  }
+
+  .bloco__icon-area {
+    height: 160px;
+  }
+
+  /* Código de Ética: stack vertically */
+  .codigo-etica__inner {
+    grid-template-columns: 1fr;
+    gap: 40px;
+  }
+
+  .codigo-etica__image {
+    height: 280px;
+  }
+
+  /* AZ Ethics: 2-column layout */
+  .az-ethics__cards {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  /* Accordion content: stack */
+  .accordion-content--text-left,
+  .accordion-content--image-left {
+    grid-template-columns: 1fr;
+    gap: 24px;
+  }
+
+  .accordion-content--image-left .accordion-image {
+    order: -1;
+  }
+
+  .accordion-item.is-open .accordion-body {
+    max-height: 1400px;
+  }
+}
+
+/* ================================================================
+   RESPONSIVE — ≤768px  (mobile)
+   ================================================================ */
+@media (max-width: 768px) {
+  :root {
+    --h-pad: 20px;
+  }
+
+  /* Hero */
+  .hero {
+    height: 280px;
+  }
+
+  .hero__title {
+    font-size: 28px;
+    max-width: 100%;
+  }
+
+  .hero__overlay {
+    background: linear-gradient(to bottom,
+        rgba(120, 23, 79, 0.85) 0%,
+        rgba(120, 23, 79, 0.6) 60%,
+        rgba(120, 23, 79, 0.3) 100%);
+  }
+
+  /* Blocos: single column */
+  .blocos {
+    padding-block: 40px;
+  }
+
+  .blocos__grid {
+    grid-template-columns: 1fr;
+  }
+
+  .blocos__intro p {
+    font-size: 16px;
+  }
+
+  .bloco__icon-area {
+    height: 140px;
+  }
+
+  /* Código de Ética */
+  .codigo-etica {
+    padding-block: 48px;
+  }
+
+  .codigo-etica__heading {
+    font-size: 26px;
+  }
+
+  .codigo-etica__image {
+    height: 220px;
+  }
+
+  .codigo-etica__quote {
+    padding: 24px 24px;
+  }
+
+  .codigo-etica__quote p {
+    font-size: 16px;
+  }
+
+  .codigo-etica__ctas {
+    flex-direction: column;
+  }
+
+  .btn {
+    width: 100%;
+    justify-content: center;
+  }
+
+  /* AZ Ethics */
+  .az-ethics {
+    padding-block: 48px;
+  }
+
+  .az-ethics__heading {
+    font-size: 22px;
+  }
+
+  .az-ethics__cards {
+    grid-template-columns: 1fr;
+  }
+
+  /* Saiba Como */
+  .saiba-como {
+    padding-block: 48px;
+  }
+
+  .saiba-como__heading {
+    font-size: 20px;
+    margin-bottom: 24px;
+  }
+
+  .accordion-card {
+    padding: 24px 20px;
+    border-radius: 16px;
+  }
+
+  .accordion-title {
+    font-size: 18px;
+  }
+
+  .accordion-header {
+    padding-block: 14px;
+  }
+
+  .accordion-text p {
+    font-size: 16px;
+  }
+
+  .accordion-image img {
+    height: 240px;
+  }
+
+  .accordion-image--full img {
+    height: 180px;
+  }
+
+  .accordion-item.is-open .accordion-body {
+    max-height: 1800px;
+  }
+
+  .saiba-como__cta-text {
+    font-size: 16px;
+  }
+
+  .saiba-como__cta-final .btn--filled-purple {
+    width: 100%;
+    max-width: 332px;
+    height: auto;
+    padding: 16px 24px;
+  }
+
+  .codigo-etica__ctas {
+    gap: 24px;
+  }
+
+  .codigo-etica__image-wrap {
+    width: 100%;
+    flex-shrink: 0;
+  }
+
+  .codigo-etica__inner {
+    display: flex;
+    flex-direction: column-reverse;
+    gap: 40px;
+  }
+
+  .btn {
+    justify-content: space-between;
+  }
+
+}
+
+/* ================================================================
+   RESPONSIVE — ≤480px  (small mobile)
+   ================================================================ */
+@media (max-width: 480px) {
+  .hero__title {
+    font-size: 40px;
+    max-width: 200px;
+  }
+
+  .hero {
+    height: 440px;
+  }
+
+  .section-label,
+  .az-ethics__heading {
+    font-size: 22px;
+  }
+
+  .saiba-como__heading {
+    font-size: 18px;
+  }
+
+  .bloco__content {
+    min-height: fit-content;
+  }
+
+  .bloco__link .setabtn {
+    margin-left: 20px;
+  }
+
+  .accordion-title {
+    font-size: 16px;
+  }
+}
