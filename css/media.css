@@ -75,7 +75,8 @@
   }
 
   .bloco__icon-area {
-    height: 160px;
+    height: 175px;
+    padding-top: 50px;
   }
 
   /* Código de Ética: stack vertically */
